@@ -24,7 +24,7 @@ namespace SprocketCache
                     result = HttpRuntime.Cache[key] as Sprocket;
                     if (result == null)
                     {
-                        result = new Sprocket();
+                        result = sprocketFactory.CreateSprocket();//new Sprocket();
                         HttpRuntime.Cache.Insert(key, result, null, DateTime.Now.AddSeconds(2), TimeSpan.Zero);
                     }
                 }
