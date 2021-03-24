@@ -61,7 +61,7 @@ namespace SprocketCache.Test
                 }));
             }
 
-            Task.WaitAll(tasks.ToArray());
+            Task.WhenAll(tasks.ToArray());
             Assert.IsTrue(dict.Keys.Count == 1);
         }
 
@@ -81,7 +81,7 @@ namespace SprocketCache.Test
 
             }
 
-            Task.WaitAll(tasks.ToArray());
+            Task.WhenAll(tasks.ToArray());
             Assert.That(sprockets.Distinct().Count() == 1);
         }
     }
